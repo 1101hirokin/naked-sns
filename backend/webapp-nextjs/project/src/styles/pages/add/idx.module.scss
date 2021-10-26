@@ -1,0 +1,32 @@
+.inputContainer {
+  width: 100%;
+  max-width: 480px;
+
+  margin: auto;
+
+  .inputArea {
+    appearance: none;
+
+    display: block;
+    width: 100%;
+    min-height: 120px;
+    
+    border: none;
+    outline: none;
+    padding: 16px;
+    resize: none;
+  }
+}
+
+.addButtonContainer {
+  width: 90%;
+  max-width: 480px;
+
+  margin: auto;
+
+  text-align: end;
+
+  .addButton {
+
+  }
+}

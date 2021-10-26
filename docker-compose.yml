@@ -1,0 +1,44 @@
+version: "3"
+
+x-var: &APP_DOMAIN
+  localhost
+
+services:
+  edge_proxy:
+    build: edge-proxy
+    container_name: edge-proxy
+    ports: 
+      - "8080:80"
+    environment:
+      APP_DOMAIN: *APP_DOMAIN
+    volumes:
+      - ./edge-proxy/logs:/var/log/nginx/
+    depends_on:
+      - laravel-service
+      - webapp-nextjs
+      - file-service
+  
+  laravel-service:
+    build: laravel-service
+    container_name: laravel-service
+    depends_on:
+      - db
+      - pubsub-service
+
+  db:
+    build: database
+    container_name: database
+    volumes:
+      - ./database/data:/var/lib/postgresql/data
+
+  pubsub-service:
+    build: redis
+    container_name: pubsub-service
+
+  file-service:
+    image: halverneus/static-file-server:latest
+    container_name: file-service
+
+  webapp-nextjs:
+    build: webapp-nextjs
+    container-name: webapp-nextjs

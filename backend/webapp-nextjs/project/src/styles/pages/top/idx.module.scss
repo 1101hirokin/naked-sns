@@ -1,0 +1,24 @@
+.postsContainer {
+  width: 100%;
+  max-width: 480px;
+
+  margin: auto;
+}
+
+.lowerLoaderButtonContainer {
+  display: block;
+  width: 100%;
+  height: 56px;
+  .lowerLoaderButton {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    font-size: .86rem;
+
+    appearance: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+}

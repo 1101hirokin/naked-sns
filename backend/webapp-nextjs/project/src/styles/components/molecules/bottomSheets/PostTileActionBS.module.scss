@@ -1,0 +1,53 @@
+@use '../../../variables/bottomSheet.scss' as bs;
+
+.bs {
+  padding-top: bs.$borderRadius;
+  padding-bottom: 32px;
+  min-height: 120px;
+
+  .contentArea {
+    font-size: 1rem;
+
+    .profileContainer {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+
+      width: 100%;
+
+      .whosPost {
+        font-weight: bold;
+        font-size: .85rem;
+      }
+    }
+
+    .actionButtonContainer {
+      width: 100%;
+      height: 48px;
+
+      .actionButton {
+        display: flex;
+        appearance: none;
+        border: none;
+        outline: none;
+        background-color: transparent;
+
+        width: 100%;
+        height: 100%;
+
+        font-size: .96rem;
+        text-align: inherit;
+
+        padding: 0 12px;
+
+        align-content: center;
+        align-items: center;
+
+        &.deleteButton {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

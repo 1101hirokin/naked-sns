@@ -1,0 +1,77 @@
+.contentArea {
+  overflow: hidden;
+}
+
+
+.logoContainer {
+  width: 60%;
+  max-width: 88px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .iconLogoWrapper {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    .iconLogo {
+      display: block;
+      width: 100%;
+    }
+  }
+  .textLogoWrapper {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    .textLogo {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+.titleWrapper {
+  width: 90%;
+  margin: auto;
+
+  .title {
+    width: 100%;
+    font-weight: normal;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    text-align: center;
+
+    margin: 0;
+  }
+}
+
+.inputContainer {
+  width: 90%;
+  max-width: 480px;
+
+  margin: auto;
+
+  .inputLabel {
+    display: block;
+    margin-bottom: 4px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .input {
+    display: block;
+    font-size: .9rem;
+    padding: 12px 12px;
+    width: 100%;
+    appearance: none;
+    border: none;
+    outline: none;
+  }
+}
+
+.loginButtonContainer {
+  width: 90%;
+  max-width: 480px;
+
+  margin: auto;
+  text-align: end;
+}

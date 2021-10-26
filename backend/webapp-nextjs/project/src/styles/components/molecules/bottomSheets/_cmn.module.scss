@@ -1,0 +1,11 @@
+@use '../../../variables/bottomSheet.scss' as bs;
+
+$borderRadius: bs.$borderRadius;
+
+.bs {
+  display: block;
+  width: 100%;
+  
+  border-radius: $borderRadius $borderRadius 0 0;
+  box-shadow: -2px 0px 6px rgba(0,0,0,.3);
+}

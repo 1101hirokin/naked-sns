@@ -1,0 +1,25 @@
+$loaderContainerHeight: 48px;
+
+.puller {
+  transition: all .18s;
+  &.hidden {
+    margin-top: -1 * $loaderContainerHeight;
+  }
+  &.shown {
+    margin-top: 0;
+  }
+  
+  .loaderContainer {
+    display: flex;
+    width: 100%;
+    height: $loaderContainerHeight;
+
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    .loader {
+      display: block;
+      height: 50%;
+    }
+  }
+}

@@ -1,0 +1,188 @@
+@use 'sass:math';
+@use '../variables/rect.scss' as rect;
+
+$appHeaderHeight: rect.$appHeaderHeight;
+$appBottomNavBarHeight: rect.$appBottomNavBarHeight;
+
+.l {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+
+  .headerContainer {
+    position: fixed;
+    top: 0;
+    z-index: 4;
+
+    width: 100%;
+    height: $appHeaderHeight;
+
+    .header {
+      width: 100%;
+    }
+  }
+  .contentsContainer {
+    padding-top: $appHeaderHeight;
+    padding-bottom: $appBottomNavBarHeight;
+
+    width: 100%;
+
+    position: relative;
+    z-index: 1;
+    .contentsArea {
+      width: 100%;
+    }
+    
+  }
+
+  .fabContainer {
+
+    $fabOffset: 16px;
+    $fabSize: 56px;
+
+    position: fixed;
+    bottom: $appBottomNavBarHeight + $fabOffset;
+    right: $fabOffset;
+
+    z-index: 2;
+    .fab {
+      display: flex;
+      $size: $fabSize;
+      width: $size;
+      height: $size;
+      border-radius: math.div($size, 2);
+
+      appearance: none;
+      border: none;
+
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+
+      .fabIcon {
+        display: block;
+        width: 40%;
+      }
+    }
+  }
+
+  .bNavContainer {
+    width: 100%;
+    height: $appBottomNavBarHeight;
+    
+    position: fixed;
+    bottom: 0;
+    z-index: 3;
+
+    .bNavBar {
+      width: 100%;
+    }
+  }
+
+  .bottomSheetContainer {
+    display: grid;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+
+    .bg {
+      display: block;
+      background-color: rgba(0,0,0,.2);
+      position: absolute;
+
+      width: 100%;
+      height: 100%;
+
+      pointer-events: none;
+    }
+
+    .closerButton {
+      grid-row: 1/2;
+      display: block;
+
+      appearance: none;
+      border: none;
+      outline: none;
+      text-align: inherit;
+      background-color: transparent;
+      padding: 0;
+
+      width: 100%;
+    }
+
+    .bottomSheetWrapper {
+      grid-row: 2/3;
+      display: block;
+      width: 100%;
+
+      animation: slideUp .3s ease-out 0s 1 forwards;
+    }
+  }
+
+  .drawerContainer {
+    display: grid;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+
+    grid-template-columns: minmax(280px, 16%) 1fr;
+    grid-template-rows: 1fr;
+
+    .bg {
+      display: block;
+      background-color: rgba(0,0,0,.2);
+      position: absolute;
+      z-index: -1;
+
+      width: 100%;
+      height: 100%;
+    }
+
+    .drawerWrapper {
+      grid-column: 1/2;
+      display: block;
+      width: 100%;
+
+      animation: slideRight .3s ease-out 0s 1 forwards;
+    }
+
+    .closerButton {
+      grid-column: 2/3;
+      display: block;
+
+      appearance: none;
+      border: none;
+      outline: none;
+      text-align: inherit;
+      background-color: transparent;
+      padding: 0;
+
+      width: 100%;
+    }
+  }
+}
+@keyframes slideUp {
+  0% {transform: translateY(100%);}
+  100% {transform: translateY(0%);}
+}
+
+@keyframes slideRight {
+  0% {transform: translateX(-100%);}
+  100% {transform: translateX(0%);}
+}

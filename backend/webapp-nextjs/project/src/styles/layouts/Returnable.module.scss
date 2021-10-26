@@ -1,0 +1,49 @@
+@use '../variables/rect.scss' as rect;
+
+$appHeaderHeight: rect.$appHeaderHeight;
+$appBottomNavBarHeight: rect.$appBottomNavBarHeight;
+
+.l {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+
+  .headerContainer {
+    position: fixed;
+    top: 0;
+    z-index: 3;
+
+    width: 100%;
+    height: $appHeaderHeight;
+
+    .header {
+      width: 100%;
+    }
+  }
+  .contentsContainer {
+    padding-top: $appHeaderHeight;
+    padding-bottom: $appBottomNavBarHeight;
+
+    width: 100%;
+
+    position: relative;
+    z-index: 1;
+    .contentsArea {
+      width: 100%;
+    }
+  }
+
+  .bNavContainer {
+    width: 100%;
+    height: $appBottomNavBarHeight;
+    
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+
+    .bNavBar {
+      width: 100%;
+    }
+  }
+}
